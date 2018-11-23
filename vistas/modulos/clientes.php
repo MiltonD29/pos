@@ -74,7 +74,7 @@
                         <td>'.$value["direccion"].'</td>
                         <td>'.$value["fecha_nacimiento"].'</td>
                         <td>'.$value["compras"].'</td>
-                        <td>000-00-00 00:00:00</td>
+                        <td>'.$value["ultima_compra"].'</td>
                         <td>'.$value["fecha"].'</td>
                         <td>
                           <div class="btn-group">

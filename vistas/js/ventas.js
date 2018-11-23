@@ -200,6 +200,7 @@ $(".formularioVenta").on("click", "button.quitarProducto", function(){
 	if ( $(".nuevoProducto").children().length == 0 ) {
 
 		$("#nuevoTotalVenta").val(0);
+		$("#totalVenta").val(0);
 		$("#nuevoImpuestoVenta").val(0);
 		$("#nuevoTotalVenta").attr("total", 0);
 
@@ -421,6 +422,7 @@ function sumarTotalPrecios(){
 	var sumarTotalPrecio = arraySumaPrecio.reduce(sumarArrayPrecios);
 
 	$("#nuevoTotalVenta").val(sumarTotalPrecio);
+	$("#totalVenta").val(sumarTotalPrecio);
 	$("#nuevoTotalVenta").attr("total", sumarTotalPrecio);
 
 }
@@ -439,6 +441,8 @@ function agregarImpuesto(){
 	var totalConImpuesto = Number(precioImpuesto) + Number(precioTotal);
 
 	$("#nuevoTotalVenta").val(totalConImpuesto);
+
+	$("#totalVenta").val(totalConImpuesto);
 
 	$("#nuevoPrecioImpuesto").val(precioImpuesto);
 
@@ -603,6 +607,19 @@ function listarMetodos(){
 	}
 
 }
+
+/*===============================================
+=            BOTÓN PARA EDITAR VENTA            =
+===============================================*/
+$(".btnEditarVenta").click(function(){
+
+	var idVenta = $(this).attr("idVenta");
+
+	window.location = "index.php?ruta=editar-venta&idVenta="+idVenta;
+
+})
+
+
 
 
 
