@@ -1,8 +1,0 @@
-{
-    "name": "milto/pos",
-    "description": "Sistema de Punto de Venta",
-    "type": "project",
-    "license": "n",
-    "minimum-stability": "dev",
-    "require": {}
-}

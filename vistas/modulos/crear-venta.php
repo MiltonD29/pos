@@ -36,7 +36,6 @@
                       type="text"
                       class="form-control" 
                       id="nuevoVendedor" 
-                      name="nuevoVendedor" 
                       value="<?php echo $_SESSION["nombre"]; ?>" 
                       readonly 
                     >
@@ -156,9 +155,11 @@
                   
                 </div>
 
+                <input type="hidden" id="listaProductos" name="listaProductos">
+
                 <button
                   type="button"
-                  class="btn btn-default hidden-lg"
+                  class="btn btn-default hidden-lg btnAgregarProducto"
                 >
                   Agregar producto
                 </button>
@@ -166,7 +167,7 @@
                 <hr>
 
                 <div class="row">
-                  <div class="col-xs-8 pull-right">
+                  <div class="col-xs-12 pull-right">
                     <table class="table">
                       
                       <thead>
@@ -183,13 +184,16 @@
                             <div class="input-group">
                               <input 
                                 type="number"
-                                class="form-control" 
+                                class="form-control input-lg" 
                                 min="0" 
                                 id="nuevoImpuestoVenta" 
                                 name="nuevoImpuestoVenta" 
                                 placeholder="0" 
                                 required 
                               >
+                              <input type="hidden" name="nuevoPrecioImpuesto" id="nuevoPrecioImpuesto" required>
+                              <input type="hidden" name="nuevoPrecioNeto" id="nuevoPrecioNeto" required>
+
                               <span class="input-group-addon">
                                 <i class="fa fa-percent"></i>
                               </span>
@@ -203,11 +207,11 @@
                                 <i class="ion ion-social-usd"></i>
                               </span>
                               <input 
-                                type="number"
-                                class="form-control" 
-                                min="0" 
+                                type="text"
+                                class="form-control input-lg" 
                                 id="nuevoTotalVenta" 
                                 name="nuevoTotalVenta" 
+                                total=""
                                 placeholder="0" 
                                 required 
                               >
@@ -224,7 +228,7 @@
 
                 <!-- Método de pago -->
                 <div class="form-group row">
-                  <div class="col-xs-6" style="padding-right: 0px">
+                  <div class="col-xs-6" style="padding-right: 0px;">
                     <div class="input-group">
                       <select 
                         class="form-control" 
@@ -233,27 +237,16 @@
                         required 
                       >
                         <option value="">Selecciona método de pago</option>
-                        <option value="efectivo">Efectivo</option>
-                        <option value="tarjetaCredito">Tarjeta de Crédito</option>
-                        <option value="tarjetaDebito">Tarjeta de Débito</option>
+                        <option value="Efectivo">Efectivo</option>
+                        <option value="TC">Tarjeta de Crédito</option>
+                        <option value="TD">Tarjeta de Débito</option>
                       </select>
                     </div>
                   </div>
 
-                  <div class="col-xs-6">
-                    <div class="input-group">
-                      <input 
-                      type="text"
-                      class="form-control" 
-                      id="nuevoCodigoTransaccion" 
-                      name="nuevoCodigoTransaccion" 
-                      placeholder="Código transacción" 
-                      >
-                      <span class="input-group-addon">
-                        <i class="fa fa-lock"></i>
-                      </span>
-                    </div>
-                  </div>
+                  <div class="cajasMetodoPago"></div>
+
+                  <input type="hidden" id="listaMetodoPago" name="listaMetodoPago">
 
                   <br>
 
