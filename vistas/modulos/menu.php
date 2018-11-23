@@ -59,6 +59,13 @@
 				</a>
 			</li>
 
+			<li>
+				<a href="proveedores">
+					<i class="fa fa-truck"></i>
+					<span>Proveedores</span>
+				</a>
+			</li>
+
 			<li class="treeview">
 				
 				<a href="#">
