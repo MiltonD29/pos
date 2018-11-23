@@ -49,7 +49,7 @@ class ModeloProveedores {
 		$stmt->bindParam(":direccion", $datos["direccion"], PDO::PARAM_STR);
 		$stmt->bindParam(":cuenta_bancaria", $datos["cuenta_bancaria"], PDO::PARAM_STR);
 
-		if ( $stmt->execute() ) {
+		if ( $stmt -> execute() ) {
 			
 			return "ok";
 
